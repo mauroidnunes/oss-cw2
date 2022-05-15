@@ -9,7 +9,7 @@
 
     $array_students = array(
         array(
-            "studentid" => "202201",
+            "studentid" => "20000001",
             "password" => "test",
             "dob" => "1998-05-03",
             "firstname" => "Jack",
@@ -21,7 +21,7 @@
             "postcode" => "MK9 5ER"
         ),
         array(
-            "studentid" => "202202",
+            "studentid" => "20000002",
             "password" => "test",
             "dob" => "2002-02-15",
             "firstname" => "Mary",
@@ -33,7 +33,7 @@
             "postcode" => "SL7 1AB"
         ),
         array(
-            "studentid" => "202203",
+            "studentid" => "20000003",
             "password" => "test",
             "dob" => "2001-08-26",
             "firstname" => "Maxime",
@@ -45,7 +45,7 @@
             "postcode" => "HP13 5DX"
         ),
         array(
-            "studentid" => "202204",
+            "studentid" => "20000004",
             "password" => "test",
             "dob" => "2000-07-04",
             "firstname" => "Filip",
@@ -57,7 +57,7 @@
             "postcode" => "HP11 3HE"
         ),
         array(
-            "studentid" => "202205",
+            "studentid" => "20000005",
             "password" => "test",
             "dob" => "2000-01-18",
             "firstname" => "Will",

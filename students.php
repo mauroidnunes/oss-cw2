@@ -17,7 +17,7 @@
 
     //Wrap table in a form 
 
-    $data['content'] .= "<form action='deletestudents.php' onsubmit=\"return confirm('Are you sure you want to delete this?');\" 
+    $data['content'] .= "<form action='deletestudents.php' onsubmit=\"return confirm('Delete?');\" 
         method='post'>";
 
     // Prepare page content
