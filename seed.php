@@ -10,8 +10,8 @@
     $array_students = array(
         array(
             "studentid" => "202201",
-            "password" => password_hash("password1", PASSWORD_DEFAULT),
-            "dob" => "03-05-1998",
+            "password" => "test",
+            "dob" => "1998-05-03",
             "firstname" => "Jack",
             "lastname" => "Walker",
             "house" => "18 Jonsville Lane",
@@ -22,8 +22,8 @@
         ),
         array(
             "studentid" => "202202",
-            "password" => password_hash("password2", PASSWORD_DEFAULT),
-            "dob" => "15-02-2002",
+            "password" => "test",
+            "dob" => "2002-02-15",
             "firstname" => "Mary",
             "lastname" => "Beckett",
             "house" => "5 Rhode Square",
@@ -34,8 +34,8 @@
         ),
         array(
             "studentid" => "202203",
-            "password" => password_hash("password3", PASSWORD_DEFAULT),
-            "dob" => "26-08-2001",
+            "password" => "test",
+            "dob" => "2001-08-26",
             "firstname" => "Maxime",
             "lastname" => "Boulanger",
             "house" => "4 London Road",
@@ -46,8 +46,8 @@
         ),
         array(
             "studentid" => "202204",
-            "password" => password_hash("password4", PASSWORD_DEFAULT),
-            "dob" => "04-07-2000",
+            "password" => "test",
+            "dob" => "2000-07-04",
             "firstname" => "Filip",
             "lastname" => "Radjenki",
             "house" => "123 Hughenden Road",
@@ -58,8 +58,8 @@
         ),
         array(
             "studentid" => "202205",
-            "password" => password_hash("password5", PASSWORD_DEFAULT),
-            "dob" => "18-01-2000",
+            "password" => "test",
+            "dob" => "2000-01-18",
             "firstname" => "Will",
             "lastname" => "Barton",
             "house" => "43 Tame House",
@@ -70,11 +70,11 @@
         ),
     );
 
-    foreach ($array_students as $key => $student_array) {
-        $stmt = $conn->prepare("INSERT INTO student VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
-        $stmt->bind_param("ssssssssss", $student_array["studentid"], $student_array["password"], $student_array["firstname"], $student_array["lastname"], 
-            $student_array["house"], $student_array["town"], $student_array["county"], $student_array["country"], $student_array["postcode"]);
-        $stmt->execute();
-        $result = $stmt->get_result();
+    foreach ($array_students as $key => $student){
+        $sql = "INSERT INTO student (studentid, password, dob, firstname, lastname, house, town, county, country, postcode) 
+        VALUES ('{$student["studentid"]}','{$student["password"]}', '{$student["dob"]}', '{$student["firstname"]}', '{$student["lastname"]}',' {$student["house"]}','{$student["town"]}', '{$student["county"]}', '{$student["country"]}','{$student["postcode"]}')";
+        echo $sql;
+        $result = mysqli_query($conn,$sql);
+     }
 
    }

@@ -12,10 +12,10 @@
       echo template("templates/partials/nav.php");
 
     // Select student records
-    $sql = "SELECT studentid, password, dob, firstname, lastname, house, town, county, country, postcode, image FROM student";
+    $sql = "SELECT * FROM student";
     $result = mysqli_query($conn, $sql);
 
-    //Maybe add list of students
+    //Wrap table in a form 
 
     $data['content'] .= "<form action='deletestudents.php' onsubmit=\"return confirm('Are you sure you want to delete this?');\" 
         method='post'>";
@@ -46,6 +46,11 @@
     }
 
     $data['content'] .= "</table>";
+
+    $data['content'] .= "<input type='submit' name='deletebtn'
+    value='Delete' />";
+
+    $data['content'] .= "</form>";
 
       // render the template
       echo template("templates/default.php", $data);
