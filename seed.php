@@ -70,11 +70,11 @@
         ),
     );
 
-    for ($i=0; $i < 5 ; $i++) { 
-        $sql = "INSERT INTO student ...";
-        // INSERT INTO table_name (column1, column2, column3, ...)
-        // VALUES ('value1', 'value2', 'value3', ...);
-        $result = mysqli_query($conn,$sql);
-    }
+    foreach ($array_students as $key => $student_array) {
+        $stmt = $conn->prepare("INSERT INTO student VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+        $stmt->bind_param("ssssssssss", $student_array["studentid"], $student_array["password"], $student_array["firstname"], $student_array["lastname"], 
+            $student_array["house"], $student_array["town"], $student_array["county"], $student_array["country"], $student_array["postcode"]);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
    }
