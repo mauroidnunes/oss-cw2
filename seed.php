@@ -10,7 +10,7 @@
     $array_students = array(
         array(
             "studentid" => "20000001",
-            "password" => "test",
+            "password" => password_hash("test", PASSWORD_DEFAULT),
             "dob" => "1998-05-03",
             "firstname" => "Jack",
             "lastname" => "Walker",
@@ -22,7 +22,7 @@
         ),
         array(
             "studentid" => "20000002",
-            "password" => "test",
+            "password" => password_hash("test", PASSWORD_DEFAULT),
             "dob" => "2002-02-15",
             "firstname" => "Mary",
             "lastname" => "Beckett",
@@ -34,7 +34,7 @@
         ),
         array(
             "studentid" => "20000003",
-            "password" => "test",
+            "password" => password_hash("test", PASSWORD_DEFAULT),
             "dob" => "2001-08-26",
             "firstname" => "Maxime",
             "lastname" => "Boulanger",
@@ -46,7 +46,7 @@
         ),
         array(
             "studentid" => "20000004",
-            "password" => "test",
+            "password" => password_hash("test", PASSWORD_DEFAULT),
             "dob" => "2000-07-04",
             "firstname" => "Filip",
             "lastname" => "Radjenki",
@@ -58,7 +58,7 @@
         ),
         array(
             "studentid" => "20000005",
-            "password" => "test",
+            "password" => password_hash("test", PASSWORD_DEFAULT),
             "dob" => "2000-01-18",
             "firstname" => "Will",
             "lastname" => "Barton",

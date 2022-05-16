@@ -14,31 +14,38 @@ if (isset($_SESSION['id'])) {
   // if the form has been submitted
   if (isset($_POST['submit'])) {
 
-   // $image = $_FILES['studentimage']['tmp_name']; 
-   //  $imagedata = addslashes(fread(fopen($image, "r"), filesize($image)));
+      //$image = $_FILES['studentimage']['tmp_name']; 
+      //$imagedata = addslashes(fread(fopen($image, "r"), filesize($image)));
 
-      // build an sql statment to insert a new
-      $sql = "INSERT into student set firstname ='" . $_POST['txtfirstname'] . "',";
+      // Insert student details into table
+      $sql = "INSERT into student set studentid ='" . $_POST['studentid']  . "',";
+      $sql .= "password ='" . $_POST['txtpassword'] . "',";
+      $sql .= "dob ='" . $_POST['txtdob'] . "',";
+      $sql .= "firstname ='" . $_POST['txtfirstname'] . "',";
       $sql .= "lastname ='" . $_POST['txtlastname']  . "',";
       $sql .= "house ='" . $_POST['txthouse']  . "',";
       $sql .= "town ='" . $_POST['txttown']  . "',";
       $sql .= "county ='" . $_POST['txtcounty']  . "',";
       $sql .= "country ='" . $_POST['txtcountry']  . "',";
-      $sql .= "postcode ='" . $_POST['txtpostcode']  . "', ";
-      // $sql .= "image =" . $imagedata . "'; ";
+      $sql .= "postcode ='" . $_POST['txtpostcode']  . "'"; //add comma
+      //$sql .= "image ='" . $imagedata . "'";
       
-      // $result = mysqli_query($conn,$sql);
+      $result = mysqli_query($conn,$sql);
 
       $data['content'] = "<p>New student added successfully.</p>";
     }
     
    else{
       $data['content'] = <<<EOD
+      
       <h2>Add New Student</h2>
       <form enctype="multipart/form-data" name="frmdetails" action="" method="post">
 
          Student ID:
-         <input class='form-control' name="txtstudentid" type="text"  /><br/>
+         <input class='form-control' name="studentid" type="text"  /><br/>
+
+         Password:
+         <input class='form-control' name="password" type="password"  /><br/>
 
          First Name:
          <input class='form-control' name="txtfirstname" type="text"  /><br/>

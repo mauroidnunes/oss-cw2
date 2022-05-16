@@ -22,7 +22,7 @@
 
     // Prepare page content
     $data['content'] .= "<table class='table table-bordered' align='left' border='1'>";
-    $data['content'] .= "<tr><th align='left'>Student ID</th><th align='left'>Password</th><th align='left'>Date of Birth</th>"
+    $data['content'] .= "<tr><th align='left'>Student ID</th><th align='left'>Date of Birth</th>"
         . "<th align='left'>First Name</th><th align='left'>Last Name</th><th align='left'>House Address</th>"
         . "<th align='left'>Town/City</th><th align='left'>County</th><th align='left'>Country</th>"
         . "<th align='left'>Postcode</th><th>Image</th><th>Select</th></tr>";
@@ -31,7 +31,6 @@
     while ($row = mysqli_fetch_assoc($result)) {
         $data['content'] .= "<tr>";
         $data['content'] .= "<td>" . $row["studentid"] . "</td>";
-        $data['content'] .= "<td>" . $row["password"] . "</td>";
         $data['content'] .= "<td>" . $row["dob"] . "</td>";
         $data['content'] .= "<td>" . $row["firstname"] . "</td>";
         $data['content'] .= "<td>" . $row["lastname"] . "</td>";
