@@ -5,8 +5,7 @@
   include("_includes/dbconnect.inc");
   include("_includes/functions.inc");
 
-  
-  $sql = "SELECT image FROM student WHERE studentid='" . $_GET["id"] ."';";
+  $sql = "SELECT image FROM student WHERE studentid='" . $_GET["studentid"] ."';";
 	
   $result = mysqli_query($conn, $sql);
   $row = mysqli_fetch_array($result);

@@ -4,7 +4,6 @@ include("_includes/config.inc");
 include("_includes/dbconnect.inc");
 include("_includes/functions.inc");
 
-
 // Check if logged in
 if (isset($_SESSION['id'])) {
 
@@ -14,12 +13,12 @@ if (isset($_SESSION['id'])) {
   // if the form has been submitted
   if (isset($_POST['submit'])) {
 
-      //$image = $_FILES['studentimage']['tmp_name']; 
-      //$imagedata = addslashes(fread(fopen($image, "r"), filesize($image)));
+      $image = $_FILES['image']['tmp_name']; 
+      $imagedata = addslashes(fread(fopen($image, "r"), filesize($image)));
 
       // Insert student details into table
       $sql = "INSERT into student set studentid ='" . $_POST['studentid']  . "',";
-      $sql .= "password ='" . $_POST['txtpassword'] . "',";
+      $sql .= "password ='" . $_POST['password'] . "',";
       $sql .= "dob ='" . $_POST['txtdob'] . "',";
       $sql .= "firstname ='" . $_POST['txtfirstname'] . "',";
       $sql .= "lastname ='" . $_POST['txtlastname']  . "',";
@@ -27,9 +26,11 @@ if (isset($_SESSION['id'])) {
       $sql .= "town ='" . $_POST['txttown']  . "',";
       $sql .= "county ='" . $_POST['txtcounty']  . "',";
       $sql .= "country ='" . $_POST['txtcountry']  . "',";
-      $sql .= "postcode ='" . $_POST['txtpostcode']  . "'"; //add comma
-      //$sql .= "image ='" . $imagedata . "'";
-      
+      $sql .= "postcode ='" . $_POST['txtpostcode']  . "',"; //add comma
+      $sql .= "image ='" . $imagedata . "'";
+
+      //echo $sql;
+
       $result = mysqli_query($conn,$sql);
 
       $data['content'] = "<p>New student added successfully.</p>";
@@ -72,7 +73,7 @@ if (isset($_SESSION['id'])) {
          <input class='form-control'  name="txtpostcode" type="text"   /><br/>
 
          Image:
-         <input  type="file" name="studentimage" accept="image/jpeg" class="form-control" />
+         <input  type="file" name="image" accept="image/jpeg" class="form-control" />
 
          <input type="submit" value="Save" name="submit"/>
       </form>
