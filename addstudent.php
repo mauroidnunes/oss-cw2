@@ -39,43 +39,69 @@ if (isset($_SESSION['id'])) {
    else{
       $data['content'] = <<<EOD
       
+      <div class="mb-2" class="mt-6">
       <h2>Add New Student</h2>
-      <form enctype="multipart/form-data" name="frmdetails" action="" method="post">
+      </div>
 
-         Student ID:
-         <input class='form-control' name="studentid" type="text"  /><br/>
+      <form enctype="multipart/form-data" name="frmaddstudent" action="" method="post">
 
-         Password:
-         <input class='form-control' name="password" type="password"  /><br/>
+         <div class="mb-3">
+         <label for="studentid" class="form-label">Student ID</label>
+         <input class='form-control' name="studentid" type="text">
+         </div>
+      
+         <div class="mb-3">
+         <label for="password" class="form-label">Password</label>
+         <input class='form-control' name="password" type="password"  /> 
+         </div>
 
-         First Name:
-         <input class='form-control' name="txtfirstname" type="text"  /><br/>
+         <div class="mb-3">
+         <label for="txtfirstname" class="form-label">First Name</label>
+         <input class='form-control' name="txtfirstname" type="text"  />
+         </div>
 
-         Last Name:
-         <input class='form-control' name="txtlastname" type="text"   /><br/>
+         <div class="mb-3">
+         <label for="txtlastname" class="form-label">Last Name</label>
+         <input class='form-control' name="txtlastname" type="text"   />
+         </div>
 
-         Date of Birth:
-         <input class='form-control' name="txtdob" type="date"  /><br/>
+         <div class="mb-3">
+         <label for="txtdob" class="form-label">Date of Birth</label>
+         <input class='form-control' name="txtdob" type="date"  />
+         </div>
 
-         Number and Street:
-         <input class='form-control' name="txthouse" type="text"   /><br/>
+         <div class="mb-3">
+         <label for="txthouse" class="form-label">Number and Street</label>
+         <input class='form-control' name="txthouse" type="text"   />
+         </div>
 
-         Town:
-         <input class='form-control' name="txttown" type="text"   /><br/>
+         <div class="mb-3">
+         <label for="txttown" class="form-label">Town</label>
+         <input class='form-control' name="txttown" type="text"   />
+         </div>
 
-         County:
-         <input class='form-control' name="txtcounty" type="text"   /><br/>
+         <div class="mb-3">
+         <label for="txtcounty" class="form-label">County</label>
+         <input class='form-control' name="txtcounty" type="text"   />
+         </div>
 
-         Country:
-         <input class='form-control' name="txtcountry" type="text"   /><br/>
+         <div class="mb-3">
+         <label for="txtcountry" class="form-label">Country</label>
+         <input class='form-control' name="txtcountry" type="text"   />
+         </div>
 
-         Postcode:
-         <input class='form-control'  name="txtpostcode" type="text"   /><br/>
+         <div class="mb-3">
+         <label for="txtpostcode" class="form-label">Postcode</label>
+         <input class='form-control'  name="txtpostcode" type="text"   />
+         </div>
 
-         Image:
-         <input  type="file" name="image" accept="image/jpeg" class="form-control" />
+         <div class="mb-3">
+         <label for="image" class="form-label">Image</label>
+         <input type="file" name="image" accept="image/jpeg" class="form-control" />
+         </div>
 
          <input type="submit" value="Save" name="submit"/>
+         
       </form>
  
  EOD;
