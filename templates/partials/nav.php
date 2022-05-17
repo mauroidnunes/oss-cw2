@@ -22,7 +22,7 @@
           <a href="details.php" style="color:white;" class="nav-link active" aria-current="page" href="#">My Details</a>
         </li>
         <li class="nav-item">
-          <a href="logout.php" style="color:white;" class="nav-link active" aria-current="page" href="#">My Modules</a>
+          <a href="logout.php" style="color:white;" class="nav-link active" aria-current="page" href="#">Logout</a>
         </li>
       </ul>
     </div>
