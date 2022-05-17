@@ -5,7 +5,7 @@ include("_includes/dbconnect.inc");
 include("_includes/functions.inc");
 
 
-// check logged in
+// Check if logged in
 if (isset($_SESSION['id'])) {
 
    echo template("templates/partials/header.php");
