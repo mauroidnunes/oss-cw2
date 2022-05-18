@@ -47,7 +47,7 @@
 
     $data['content'] .= "</table>";
 
-    $data['content'] .= "<input type='submit' name='deletebtn' value='Delete' />";
+    $data['content'] .= "<input type='submit' name='deletebtn' class='btn btn-primary' value='Delete'/>";
 
     $data['content'] .= "</form>";
 
